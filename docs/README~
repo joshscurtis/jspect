@@ -1,0 +1,65 @@
+=================================================================
+=================================================================
++ JSpect README - project status and general ramble document
+=================================================================
+=================================================================
+
+ 	Began: 6.8.03
+	Author: Joshua S. Curtis
+	Dev Env: java 1.4, Windows XP
+
+	Need to coagulate my thought process on this one. Maybe
+	I shoulda done some design first. Ah well...
+
+
+	
+
+   SUMMARY:
+
+	The basic premise of this project is to build a real-time(?)
+   spectral analysis tool in java. The program's primary ( and for a while only)
+   input is the preferred mic input in windows. 
+	Some consideration was required to balance the frequency resolution
+   of the visualization with the overall speed and usability of the 
+   java language in a RT implementation of this kind. 
+   
+	f_d = delta f, or the distance, in Hz ,between the closest 
+		of two frequency amplitudes returned by the fft calculation.
+
+	f_d = 1/( N * T)
+
+		where, 
+			N = sample size of fft input buffer
+			T = sampling period, in this case 1/44100
+
+   	The first version of JSpect uses a fft buffer size of 8k (8192) 
+   samples. This gives us a fairly accurate frequency resolution for
+   the visualization. 
+   	
+	f_d = ~5.4Hz
+
+   	more sometime...
+
+   
+   VERSION NOTES:
+
+   	1.0 ::::: 
+		Initial attempt at the project. Some successes in design, 
+	   some very annoying inconsistancies in the output.
+
+
+   TESTING:
+
+	Exploratory:
+		Need to test the value range of javasound api. Shove pink noise
+	at full volume(0db) from some source (probably from another computer) to
+	find the maximum value returned by javasound's read().
+
+	Frequency Correctness:
+		Need to hook up the project to a signal generator, possibly
+	with a sweep ability.
+
+
+   OTHER NOTES:
+   	build small preamp(simple) for development purposes
+		see Favorites List
