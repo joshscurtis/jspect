@@ -1,7 +1,7 @@
 
 
 /*
- * Java Core libarary calls
+ * Java Core library calls
  */ 
 import java.awt.*;
 import java.awt.event.*;
